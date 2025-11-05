@@ -5,7 +5,7 @@ resource "aws_vpc" "main" {
     enable_dns_support   = true
 
     tags = {
-        Name = "main-vpc"
+        Name = "terrateam-vpc"
     }
 }
 
@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "main" {
     vpc_id = aws_vpc.main.id
 
     tags = {
-        Name = "main-igw"
+        Name = "terrateam-igw"
     }
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "main" {
     map_public_ip_on_launch = true
 
     tags = {
-        Name = "main-subnet"
+        Name = "terrateam-subnet"
     }
 }
 
@@ -40,7 +40,7 @@ resource "aws_route_table" "main" {
     }
 
     tags = {
-        Name = "main-rt"
+        Name = "terrateam-rt"
     }
 }
 
@@ -51,7 +51,7 @@ resource "aws_route_table_association" "main" {
 
 # Security Group
 resource "aws_security_group" "main" {
-    name        = "main-sg"
+    name        = "terrateam-sg"
     description = "Main security group"
     vpc_id      = aws_vpc.main.id
 
@@ -70,7 +70,7 @@ resource "aws_security_group" "main" {
     }
 
     tags = {
-        Name = "main-sg"
+        Name = "terrateam-sg"
     }
 }
 
@@ -87,7 +87,7 @@ resource "aws_instance" "main" {
     }
 
     tags = {
-        Name = "main-ec2"
+        Name = "terrateam-ec2"
     }
 }
 
@@ -97,7 +97,7 @@ resource "aws_eip" "main" {
     domain   = "vpc"
 
     tags = {
-        Name = "main-eip"
+        Name = "terrateam-eip"
     }
 }
 
