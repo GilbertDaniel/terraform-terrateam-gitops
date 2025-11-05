@@ -49,7 +49,7 @@ resource "aws_route_table_association" "main" {
     route_table_id = aws_route_table.main.id
 }
 
-# Security Group
+# Security Group SG
 resource "aws_security_group" "main" {
     name        = "terrateam-sg"
     description = "Main security group"
